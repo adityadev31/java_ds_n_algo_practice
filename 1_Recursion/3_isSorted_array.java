@@ -35,3 +35,44 @@ public class Main{
     OUTPUT -    true
 
 **/
+
+
+
+
+/**
+
+        other way
+        
+       
+
+    2nd way -------given an array - find whether the array is sorted or not
+
+
+
+public class Main{
+    
+    
+    public static boolean isSorted(int arr[], int startIndex){
+        if(startIndex>=arr.length-1)
+            return true;
+            
+        boolean small = isSorted(arr, startIndex+1);
+        if(small==false)
+            return false;
+        else if(arr[startIndex]<=arr[startIndex+1])
+            return true;
+        return false;
+    }
+    
+    
+    public static void main(String args[]){
+        int arr[] = {4,3,4,6,8,13,100};
+        System.out.print(isSorted(arr, 0));    // arr.length = 7
+    }
+    
+}
+
+    OUTPUT -   false
+
+
+**/
