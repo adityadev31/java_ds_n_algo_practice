@@ -41,10 +41,6 @@ public class Main{
 
 /**
 
-        other way
-        
-       
-
     2nd way -------given an array - find whether the array is sorted or not
 
 
@@ -56,23 +52,23 @@ public class Main{
         if(startIndex>=arr.length-1)
             return true;
             
-        boolean small = isSorted(arr, startIndex+1);
-        if(small==false)
+        if(arr[startIndex]>arr[startIndex+1])
             return false;
-        else if(arr[startIndex]<=arr[startIndex+1])
-            return true;
-        return false;
+        boolean small = isSorted(arr, startIndex+1);
+        return small;
     }
     
     
     public static void main(String args[]){
-        int arr[] = {4,3,4,6,8,13,100};
+        int arr[] = {2,3,4,6,8,13,100};
         System.out.print(isSorted(arr, 0));    // arr.length = 7
     }
     
 }
 
-    OUTPUT -   false
+
+    OUTPUT -    true
+
 
 
 **/
